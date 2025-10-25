@@ -34,8 +34,6 @@ def _menu(title, items, cols=None, lpp=None):
         return None
     return items[sel][1]
 
-
-
 # ===== atajos AST (del modulo derivadas) =====
 Num=ds.Num; Var=ds.Var; Add=ds.Add; Sub=ds.Sub; Mul=ds.Mul; Div=ds.Div
 Pow=ds.Pow; Call=ds.Call

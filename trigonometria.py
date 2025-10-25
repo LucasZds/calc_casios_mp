@@ -24,7 +24,7 @@ def _menu(title, items, cols=None, lpp=None):
     textos = []
     i = 0
     while i < len(items):
-        textos.append(items[i][0])   # sin "[i] " acá
+        textos.append(items[i][0])   # sin "[i] " aca
         i += 1
     sel = view_menu(title, textos, cols=cols, lines_per_screen=lpp)
     if sel is None:
@@ -199,11 +199,11 @@ def _rect_catetos():
     a = _ask_float("cateto a:")
     b = _ask_float("cateto b:")
     if a < 0 or b < 0:
-        view_text_from_string("Rectángulo", "longitudes invalidas"); _pause(); return
+        view_text_from_string("Rectangulo", "longitudes invalidas"); _pause(); return
     c = math.hypot(a, b)
     A = math.atan2(a, b)  # opuesto/adyacente
     B = math.atan2(b, a)
-    view_text("Rectángulo: catetos -> hip y ángulos", [
+    view_text("Rectangulo: catetos -> hip y angulos", [
         "a = " + _fmt(a) + "   b = " + _fmt(b),
         "c = " + _fmt(c),
         _ang_line("A", A),
@@ -215,11 +215,11 @@ def _rect_hip_cat():
     c = _ask_float("hipotenusa c:")
     a = _ask_float("cateto a:")
     if c <= 0 or a < 0 or a >= c:
-        view_text_from_string("Rectángulo", "datos invalidos"); _pause(); return
+        view_text_from_string("Rectangulo", "datos invalidos"); _pause(); return
     b = math.sqrt(c*c - a*a)
     A = math.asin(a / c)
     B = math.asin(b / c)
-    view_text("Rectángulo: hip + cateto -> resto", [
+    view_text("Rectangulo: hip + cateto -> resto", [
         "c = " + _fmt(c) + "   a = " + _fmt(a),
         "b = " + _fmt(b),
         _ang_line("A", A),
@@ -231,11 +231,11 @@ def _rect_A_y_opuesto():
     A = _to_rad(_ask_float("angulo A (" + _in_mode_label() + "):"))
     a = _ask_float("cateto opuesto a:")
     if not (0 < A < math.pi/2):
-        view_text_from_string("Rectángulo", "A debe ser (0,90)"); _pause(); return
+        view_text_from_string("Rectangulo", "A debe ser (0,90)"); _pause(); return
     c = a / math.sin(A)
     b = c * math.cos(A)
     B = math.pi/2 - A
-    view_text("Rectángulo: A + opuesto a -> resto", [
+    view_text("Rectangulo: A + opuesto a -> resto", [
         "a = " + _fmt(a),
         "b = " + _fmt(b),
         "c = " + _fmt(c),
@@ -247,11 +247,11 @@ def _rect_A_y_ady():
     A = _to_rad(_ask_float("angulo A (" + _in_mode_label() + "):"))
     b = _ask_float("cateto adyacente b:")
     if not (0 < A < math.pi/2):
-        view_text_from_string("Rectángulo", "A debe ser (0,90)"); _pause(); return
+        view_text_from_string("Rectangulo", "A debe ser (0,90)"); _pause(); return
     c = b / math.cos(A)
     a = c * math.sin(A)
     B = math.pi/2 - A
-    view_text("Rectángulo: A + adyacente b -> resto", [
+    view_text("Rectangulo: A + adyacente b -> resto", [
         "b = " + _fmt(b),
         "a = " + _fmt(a),
         "c = " + _fmt(c),
@@ -263,11 +263,11 @@ def _rect_A_y_hip():
     A = _to_rad(_ask_float("angulo A (" + _in_mode_label() + "):"))
     c = _ask_float("hipotenusa c:")
     if not (0 < A < math.pi/2) or c <= 0:
-        view_text_from_string("Rectángulo", "datos invalidos"); _pause(); return
+        view_text_from_string("Rectangulo", "datos invalidos"); _pause(); return
     a = c * math.sin(A)
     b = c * math.cos(A)
     B = math.pi/2 - A
-    view_text("Rectángulo: A + hipotenusa c -> resto", [
+    view_text("Rectangulo: A + hipotenusa c -> resto", [
         "c = " + _fmt(c),
         "a = " + _fmt(a),
         "b = " + _fmt(b),

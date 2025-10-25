@@ -20,7 +20,7 @@ def _is_idch_ext(c):
 
 def _safe_replace_name(s, name, repl):
     """
-    Reemplaza 'name' por 'repl' solo cuando NO está pegado a otros chars de identificador.
+    Reemplaza 'name' por 'repl' solo cuando NO esta pegado a otros chars de identificador.
     Ej: con name='x' NO toca 'x0', 'exp', 'cos', etc.
     """
     out = []
@@ -101,7 +101,7 @@ class Parser:
         # asociatividad a derecha: x^y^z = x^(y^z)
         if self.lx.cur.t == OP and self.lx.cur.v == "^":
             self.lx.next()
-            rhs = self.unary()   # importante: no usar while aquí
+            rhs = self.unary()   # importante: no usar while aqui
             node = Pow(node, rhs)
         return node
 
@@ -346,7 +346,7 @@ def _menu(title, items, cols=None, lpp=None):
     textos = []
     i = 0
     while i < len(items):
-        textos.append(items[i][0])   # sin "[i] " acá
+        textos.append(items[i][0])   # sin "[i] " aca
         i += 1
     sel = view_menu(title, textos, cols=cols, lines_per_screen=lpp)
     if sel is None:
@@ -446,7 +446,7 @@ def _despejar():
             "Ecuacion: " + ecu.replace("**","^"),
             (var + " = " + expr),
             "",
-            "Nota: si el enunciado usa x y x0, recordá que x es la variable y x0 es otra distinta (p. inicial)."
+            "Nota: si el enunciado usa x y x0, recorda que x es la variable y x0 es otra distinta (p. inicial)."
         ]
         view_text("Resultado", lineas)
     else:

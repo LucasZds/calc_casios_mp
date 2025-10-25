@@ -336,7 +336,7 @@ def _ayuda():
     doc = (
         "AYUDA\n"
         "Entrada: f(x) con + - * / ^ (también ** para potencia) y paréntesis. "
-        "Sin multiplicación implícita.\n"
+        "Sin multiplicación implicita.\n"
         "Funciones: sin cos tan exp ln sqrt asin acos atan sinh cosh tanh log10\n"
         "Constantes: pi, e. Variable: x\n"
         "Ejemplos:\n"

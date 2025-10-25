@@ -42,6 +42,16 @@ def _cfg_g():
     if val>0: g = val
     print("g =", _fmt(g)); _pause()
 
+# --- helpers ángulo (la Casio no trae math.radians/degrees) ---
+PI = 3.141592653589793
+def _rad(deg):  # grados → radianes
+    try: return deg * PI / 180.0
+    except: return 0.0
+
+def _deg(rad):  # radianes → grados
+    try: return rad * 180.0 / PI
+    except: return 0.0
+
 # ===================== ENERGIA / TRABAJO / POTENCIA =====================
 def _trabajo_escalar():
     print("Trabajo: W = F d cos(theta)")
@@ -65,7 +75,7 @@ def _trabajo_escalar():
         else:
             c=W/(F*d)
             if c<-1 or c>1: print("cos fuera de rango")
-            else: print("theta =", _fmt(math.degrees(math.acos(c))), "deg")
+            else: print("theta =", _fmt(_deg(math.acos(c))), "deg")
     else: print("objetivo invalido")
     _pause()
 

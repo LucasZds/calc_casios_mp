@@ -21,7 +21,7 @@ def _menu(title, items, cols=None, lpp=None):
     textos = []
     i = 0
     while i < len(items):
-        textos.append(items[i][0])   # sin "[i] " acá
+        textos.append(items[i][0])   # sin "[i] " aca
         i += 1
     sel = view_menu(title, textos, cols=cols, lines_per_screen=lpp)
     if sel is None:
@@ -49,7 +49,7 @@ def _from_rad(r): return r if _MODE_RAD else (r*180.0/math.pi)
 def _toggle_mode():
     global _MODE_RAD
     _MODE_RAD = not _MODE_RAD
-    view_text_from_string("Modo ángulos", "modo: " + _in_mode_label())
+    view_text_from_string("Modo angulos", "modo: " + _in_mode_label())
     _pause()
 
 # ===== parseo de vectores =====
@@ -167,10 +167,10 @@ def _2d_dot_ang():
         "u·v = " + _fmt(dp),
     ]
     if ang is None:
-        lineas.append("ángulo: indefinido")
+        lineas.append("angulo: indefinido")
     else:
-        lineas.append("ángulo = " + _fmt(_from_rad(ang)) + " " + _in_mode_label())
-    view_text("2D: punto y ángulo", lineas); _pause()
+        lineas.append("angulo = " + _fmt(_from_rad(ang)) + " " + _in_mode_label())
+    view_text("2D: punto y angulo", lineas); _pause()
 
 def _2d_proj_u_on_v():
     u=_ask_vec2("u (x,y):"); v=_ask_vec2("v (x,y):")
@@ -191,12 +191,12 @@ def _2d_dist():
 
 def _2d_rotate():
     v=_ask_vec2("v (x,y):")
-    ang = _to_rad(_ask_float("ángulo (" + _in_mode_label() + "):"))
+    ang = _to_rad(_ask_float("angulo (" + _in_mode_label() + "):"))
     c = math.cos(ang); s = math.sin(ang)
     w = (v[0]*c - v[1]*s, v[0]*s + v[1]*c)
     view_text("2D: rotación", [
         "v = " + _fmt_vec(v),
-        "ángulo = " + _fmt(_from_rad(ang)) + " " + _in_mode_label(),
+        "angulo = " + _fmt(_from_rad(ang)) + " " + _in_mode_label(),
         "rot = " + _fmt_vec(w),
     ]); _pause()
 
@@ -253,10 +253,10 @@ def _3d_dot_ang():
         "u·v = " + _fmt(dp),
     ]
     if ang is None:
-        lineas.append("ángulo: indefinido")
+        lineas.append("angulo: indefinido")
     else:
-        lineas.append("ángulo = " + _fmt(_from_rad(ang)) + " " + _in_mode_label())
-    view_text("3D: punto y ángulo", lineas); _pause()
+        lineas.append("angulo = " + _fmt(_from_rad(ang)) + " " + _in_mode_label())
+    view_text("3D: punto y angulo", lineas); _pause()
 
 def _3d_cross():
     u=_ask_vec3("u (x,y,z):"); v=_ask_vec3("v (x,y,z):")
